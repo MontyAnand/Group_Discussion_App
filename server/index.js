@@ -30,12 +30,12 @@ app.use(Router);
 app.use(express.static(path.resolve(__dirname, '../client/chat-app/build')));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../client/chat-app/build', 'index.html'));
+  res.sendFile(path.resolve(__dirname, './client/chat-app/build', 'index.html'));
 });
 
 const io = new Server(server, {
     cors: {
-      origin: "http://localhost:3000",
+      
       methods: ["GET", "POST"],
     },
   });
